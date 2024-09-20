@@ -1,6 +1,6 @@
 # Grant Funds Financial Analysis Project
 
-![logo](Assets/Images/Logo.png)
+![logo](Assets/Images/Logo2.png)
 
 
 ## Project Overview
