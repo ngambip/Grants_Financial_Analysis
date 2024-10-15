@@ -134,7 +134,7 @@ In Power BI, we’ll perform the following steps:
 ![data modeling](Assets/Images/Data_Modeling.png)
 ---
 
-## Mockup Dashboard Design
+## Template Dashboard Design from FIGMA
 
 The dashboard will present an interactive view of the income and expenditure data. Suggested visuals include:
 
