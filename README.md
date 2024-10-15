@@ -5,7 +5,7 @@
 
 ## Project Overview
 
-This project focuses on analyzing the grant funds of a nonprofit organization to evaluate income and expenditures over a 1-year period. The objective is to ensure that donor funds are being allocated and utilized effectively for their intended purposes. We will analyze and classify expenses to identify the largest expenditure categories and provide data-driven insights. Data will be extracted from Sage in CSV format, cleaned and processed in Excel, and loaded into Power BI for modeling and visualization.
+This project focuses on analyzing the grant funds of a nonprofit organization to evaluate income and expenditures over a 1-year period. The objective is to ensure that donor funds are being allocated and utilized for the intended purpose. We will analyze and classify expenses to identify the largest expenditure categories and provide data-driven insights. Data will be extracted from SAGE Accounting Package in CSV format, Uploaded, Transformed,modeled, formulate Dax measurements and visualization in power BI.
 
 ---
 
@@ -109,9 +109,10 @@ In Power BI, we’ll perform the following steps:
    - Add calculated columns (e.g., total income, total expenses, percentage spent on salaries).
 
 2. **KPI Measurements**:
-   - Track the total income received, total expenses, and remaining funds.
-   - Measure the percentage of funds allocated to each category (Project Activity, Administration, Salaries).
-
+   - Establish the total income received, total expenses, and remaining funds.
+   - Measure the percentage of funds contributed by each category (Project Activity, Administration, Salaries).
+     
+![data modeling](Assets/Images/Data_Modeling.png)
 ---
 
 ## Mockup Dashboard Design
@@ -119,33 +120,46 @@ In Power BI, we’ll perform the following steps:
 The dashboard will present an interactive view of the income and expenditure data. Suggested visuals include:
 
 1. **Income vs. Expense Breakdown**:  
-   - **Bar Chart**: Comparing total income to total expenditure for the year.
+   - **Bar Chart**: Comparing total income to total expenditure for the year on a monthly basis
 
-2. **Category Breakdown of Expenses**:  
+2. **Category Breakdown of Expenses and Income **:  
    - **Donut/Pie Chart**: Visualizing the proportion of funds spent on Project Activity, Administration, and Salaries.
 
-3. **Monthly Cash Flow Analysis**:  
-   - **Line Chart**: Displaying monthly income vs. expenses to show trends over time.
+3. **Monthly net Cash Flow Analysis**:  
+   - **Line Chart**: Displaying monthly income vs. expenses to show trends over the year on a monthly basis.
 
 4. **Top Expense Categories**:  
-   - **Stacked Bar Chart**: Highlighting which category (Project Activity, Administration, or Salaries) had the largest portion of total spending.
+   - **Slicers**: Highlighting which category (Project Activity, Administration, or Salaries) had the largest portion of total spending.
 
-5. **Budget vs. Actual Expenditure**:  
-   - **Table with Conditional Formatting**: Showing variances between budgeted amounts and actual spending.
+![Mockup-dashboard](Assets/Images/Mockup_dashboard.png)
 
 ---
 
 ## Conclusion and Recommendations
 
-After completing the analysis, the results will provide insights into how donor funds are being utilized. Key findings will include:
+# Final Dashboard
 
-- **Conclusions**:  
-   - Insights into whether funds were used as intended.  
-   - Identification of major expenditure areas and trends.
+![Final Dashboard](Assets/Images/Final_Dashboard_nonprofit.png)
 
-- **Recommendations**:  
-   - Suggestions for optimizing fund allocation to reduce overhead and administrative costs.  
-   - Opportunities to improve financial transparency and ensure funds are being used efficiently.
 
-I look forward to providing these final insights after completing the analysis.
+## Key Findings from Grant Fund Analysis
+
+After completing the analysis of the nonprofit's grant funds, the following insights were gathered:
+
+   - **Misalignment of Fund Utilization**: A significant portion of expenses (73%) was allocated to **salaries**, while only **7%** went toward **project        activities**. This disparity raises concerns, as project activities are the core focus of the nonprofit. Regardless of whether this was budgeted or        not,it indicates that the majority of funds were not being used for the project's primary objectives.
+  
+   - **Irregular Fund Receipts**: Although funds were intended to be drawn quarterly, there was no identifiable pattern in how the funds were received.          This inconsistency warrants further investigation, as it may affect the organization’s ability to plan and allocate resources effectively.
+
+### Challenges:
+   - Due to the lack of access to the **budget** and **prior year data**, I was unable to conduct certain financial measures, such as:
+   - **Variance Analysis**: To compare actual spending with budgeted figures.
+   - Analysis of any **increase or decrease in expenses** or **income** over time.
+
+### Recommendations:
+   - **Optimize Fund Allocation**: There is a need to reallocate funds more effectively by reducing overhead (such as salaries) and increasing the             allocation toward project-related activities. This will ensure that funds are aligned with the core mission of the nonprofit.
+  
+   - **Improve Financial Transparency**: Implementing a more consistent and trackable system for receiving funds (e.g., quarterly disbursements) is             crucial.This will help in better financial planning and forecasting for future periods.
+
+   - **Follow-Up with Program Teams**: These findings should be discussed with program managers to ensure proper adjustments in the upcoming year's                financial planning. Their input is essential in aligning financial goals with the project’s objectives and improving fund utilization moving               forward.
+
 
