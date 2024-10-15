@@ -158,7 +158,7 @@ The dashboard will present an interactive view of the income and expenditure dat
 
 # Final Dashboard
 
-![Final Dashboard](Assets/Images/Final_Dashboard_nonprofit.png)
+![Final Dashboard](Assets/Images/UPDATED_DASBOARD.png)
 
 
 ## Key Findings from Grant Fund Analysis
