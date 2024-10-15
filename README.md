@@ -141,11 +141,11 @@ The dashboard will present an interactive view of the income and expenditure dat
 1. **Income vs. Expense Breakdown**:  
    - **Bar Chart**: Comparing total income to total expenditure for the year on a monthly basis
 
-2. **Category Breakdown of Expenses and Income **:  
-   - **Donut/Pie Chart**: Visualizing the proportion of funds spent on Project Activity, Administration, and Salaries.
+2. **Category Breakdown of Expenses and Income**:  
+   - **Donut/Pie Chart**: Visualizing the proportion of funds spent on Project Activity, Administration,          and Salaries.
 
 3. **Monthly net Cash Flow Analysis**:  
-   - **Line Chart**: Displaying monthly income vs. expenses to show trends over the year on a monthly basis.
+   - **Line Chart**: Displaying monthly income vs. expenses to show trends over the year on a monthly             basis.
 
 4. **Top Expense Categories**:  
    - **Slicers**: Highlighting which category (Project Activity, Administration, or Salaries) had the largest portion of total spending.
