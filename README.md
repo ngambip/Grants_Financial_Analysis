@@ -25,7 +25,26 @@ This project focuses on analyzing the grant funds of a nonprofit organization to
 
 ## Introduction
 
-This project aims to analyze the financial records of grant funds to assess their utilization and ensure transparency. By analyzing income sources and classifying expenses into categories (Project Activity, Administration, Salaries), we will highlight the major areas of spending, helping to inform future budgeting decisions.
+This project aims to analyze the financial records of grant funds to assess their utilization and ensure transparency. By analyzing income sources and classifying expenses into categories (Project Activity, Administration, Salaries), we will highlight the major areas of spending, helping to inform future budgeting decisions.We expect the Dasboard for answer the following Questions.
+
+## Key Questions Addressed by the Dashboard
+
+The dashboard provides insights into the nonprofit's grant fund allocation and utilization by answering the following critical questions:
+
+1. **What are the largest areas of expenditure?**
+   - The dashboard will classify and break down all expenses, helping to identify which categories (e.g.,       salaries, project activities, administrative costs) consume the highest percentage of funds.
+
+2. **How effectively are funds being allocated to core activities?**
+   - By comparing spending on project activities versus overhead costs (such as salaries and                   administrative expenses), the dashboard will reveal whether funds are being utilized in alignment         with the nonprofit’s mission.
+
+3. **Are funds being received on a regular basis as planned?**
+   - The dashboard will visualize the timing of fund receipts throughout the year, identifying any             discrepancies or irregularities in the planned quarterly disbursements.
+
+4. **What are the trends in income and expenditures over time?**
+   - The dashboard will display month-to-month trends for both income and expenses, providing insights          into cash flow and revealing any periods of financial strain or surplus.
+
+5. **Which areas of spending require further investigation or adjustment?**
+   - Based on the data, the dashboard will highlight areas where spending is disproportionately high or       low compared to expected allocations, indicating where adjustments or further investigation may be         needed to optimize fund usage.
 
 ---
 
@@ -40,8 +59,8 @@ Data will be exported from **Sage** accounting software in CSV format, covering:
 ## Data Preparation
 
 ### Steps:
-- **Export Data**: Extract raw income and expense data from Sage.
-- **Excel Organization**: Separate income and expense data into different Excel files.
+- **Export Data**: Extract raw income and expense data from Sage Accounting Package.
+- **Excel Organization**: Create Categories and Subcategories for income and expense.
 - **Cleaning**: Clean the data in Excel to ensure it’s ready for analysis.
 - **Power BI Import**: Load the cleaned Excel files into Power BI for data modeling and analysis.
 
@@ -146,20 +165,20 @@ The dashboard will present an interactive view of the income and expenditure dat
 
 After completing the analysis of the nonprofit's grant funds, the following insights were gathered:
 
-   - **Misalignment of Fund Utilization**: A significant portion of expenses (73%) was allocated to **salaries**, while only **7%** went toward **project        activities**. This disparity raises concerns, as project activities are the core focus of the nonprofit. Regardless of whether this was budgeted or        not,it indicates that the majority of funds were not being used for the project's primary objectives.
+   - **Misalignment of Fund Utilization**: A significant portion of expenses (32%) was allocated to             **salaries**, while only **7%** went toward **project activities**. This disparity raises                    concerns, as project activities are the core focus of the nonprofit. Regardless of whether this            was budgeted or not,it indicates that the majority of funds were not being used for the                   project's primary objectives.
   
-   - **Irregular Fund Receipts**: Although funds were intended to be drawn quarterly, there was no identifiable pattern in how the funds were received.          This inconsistency warrants further investigation, as it may affect the organization’s ability to plan and allocate resources effectively.
+   - **Irregular Fund Receipts**: Although funds were intended to be drawn quarterly, there was no                identifiable pattern in how the funds were received.This inconsistency warrants further                   investigation, as it may affect the organization’s ability to plan and allocate resources                 effectively.
 
 ### Challenges:
-   - Due to the lack of access to the **budget** and **prior year data**, I was unable to conduct certain financial measures, such as:
+   - Due to the lack of access to the **budget** and **prior year data**, I was unable to conduct certain       financial measures, such as:
    - **Variance Analysis**: To compare actual spending with budgeted figures.
    - Analysis of any **increase or decrease in expenses** or **income** over time.
 
 ### Recommendations:
-   - **Optimize Fund Allocation**: There is a need to reallocate funds more effectively by reducing overhead (such as salaries) and increasing the             allocation toward project-related activities. This will ensure that funds are aligned with the core mission of the nonprofit.
+   - **Optimize Fund Allocation**: There is a need to reallocate funds more effectively by reducing             overhead (such as salaries) and increasing the allocation toward project-related activities. This          will ensure that funds are aligned with the core mission of the nonprofit.
   
-   - **Improve Financial Transparency**: Implementing a more consistent and trackable system for receiving funds (e.g., quarterly disbursements) is             crucial.This will help in better financial planning and forecasting for future periods.
+   - **Improve Financial Transparency**: Implementing a more consistent and trackable system for                receiving funds (e.g., quarterly disbursements) is crucial.This will help in better financial              planning and forecasting for future periods.
 
-   - **Follow-Up with Program Teams**: These findings should be discussed with program managers to ensure proper adjustments in the upcoming year's                financial planning. Their input is essential in aligning financial goals with the project’s objectives and improving fund utilization moving               forward.
+   - **Follow-Up with Program Teams**: These findings should be discussed with program managers to ensure       proper adjustments in the upcoming year's financial planning. Their input is essential in aligning       financial goals with the project’s objectives and improving fund utilization moving forward.
 
 
