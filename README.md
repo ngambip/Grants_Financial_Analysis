@@ -76,10 +76,10 @@ Before diving into cleaning, we’ll perform an exploratory data analysis to und
 
 2. **Descriptive Statistics**:  
    - Summarize total income and total expenses.  
-   - Calculate average, median, and range for both income and expense records.
+   - Calculate % ratio for both income and expense records against the total Project Receipt.
 
 3. **Trend Identification**:  
-   - Analyze the distribution of expenses over time (monthly, quarterly).  
+   - Analyze the distribution of expenses over time (monthly,).  
    - Visualize patterns in income flow from different sources.
 
 4. **Basic Data Visualizations (in Excel or Power BI)**:  
@@ -119,7 +119,7 @@ This classification will help us assess where the bulk of the funds are being sp
 
 ---
 
-## Data Modeling in Power BI
+## Data Modeling and DAX Calculation in Power BI
 
 In Power BI, we’ll perform the following steps:
 
@@ -130,7 +130,85 @@ In Power BI, we’ll perform the following steps:
 2. **KPI Measurements**:
    - Establish the total income received, total expenses, and remaining funds.
    - Measure the percentage of funds contributed by each category (Project Activity, Administration, Salaries).
-     
+  
+3. **DAX Calculations**:
+   
+``sql
+
+- Total Amount = 
+    SUM('Updated Fact Table'[Amount])
+
+
+- Expense % =
+    DIVIDE([Expenses], [Total Amount])
+
+- Income % = 
+    DIVIDE([Income], [Total Amount])
+
+- Net Income = 
+    [Income] - [Expenses]
+
+
+ - Expense neg = 
+    CALCULATE([Total Amount], dimCategory[Type] = "Expenses") * -1
+
+- Expenses = 
+    CALCULATE([Total Amount], dimCategory[Type] = "Expenses")
+
+- Income = 
+    CALCULATE([Total Amount], dimCategory[Type] = "Income")
+
+
+-   Contribution = 
+    VAR _allvalue =
+        CALCULATE(
+            [Total Amount],
+            ALL(dimCategory[Type]),
+            ALL(dimCategory[Category])
+        )
+    RETURN
+        DIVIDE([Total Amount],  _allvalue)
+
+- Total Amount Area Sparkline = 
+// line and area colour - use %23 instead of # for Firefox compatibility (Measure Derived from Eldersveld Modified by Kolosko)
+VAR Defs = "<defs>
+    <linearGradient id='grad' x1='0' y1='25' x2='0' y2='50' gradientUnits='userSpaceOnUse'>
+        <stop stop-color='navy' offset='0' />
+        <stop stop-color='transparent' offset='1' />
+    </linearGradient>
+</defs>"
+// "Date" field used in this example along the X axis
+VAR XMinDate = MIN('Calendar'[Monthnum])
+VAR XMaxDate = MAX('Calendar'[Monthnum])
+
+// Obtain overall min and overall max measure values when evaluated for each date
+VAR YMinValue = MINX(VALUES('Calendar'[Monthnum]), CALCULATE([Total Amount]))
+VAR YMaxValue = MAXX(VALUES('Calendar'[Monthnum]), CALCULATE([Total Amount]))
+
+// Build table of X & Y coordinates and fit to 50 x 150 viewbox
+VAR SparklineTable = ADDCOLUMNS(
+    SUMMARIZE('Calendar', 'Calendar'[Monthnum]),
+    "X", INT(150 * DIVIDE('Calendar'[Monthnum] - XMinDate, XMaxDate - XMinDate)),
+    "Y", INT(50 * DIVIDE([Total Amount] - YMinValue, YMaxValue - YMinValue)))
+
+// Conc
+
+- Total Amount Formatted = 
+    FORMAT([Total Amount], "$#,.0,k")
+
+- Total Balance = 
+    Sum(dimAccount[Balance])
+
+- Calendar = 
+ADDCOLUMNS(
+    CALENDARAUTO(),
+    "Year", YEAR([Date]),
+    "Month", FORMAT([Date], "mmm"),
+    "Monthnum", MONTH([Date]),
+    "Weekday", FORMAT([Date], "ddd"),
+    "Weeknum", WEEKDAY([Date])
+)
+```     
 ![data modeling](Assets/Images/Data_Modeling.png)
 ---
 
@@ -139,7 +217,7 @@ In Power BI, we’ll perform the following steps:
 The dashboard will present an interactive view of the income and expenditure data. Suggested visuals include:
 
 1. **Income vs. Expense Breakdown**:  
-   - **Bar Chart**: Comparing total income to total expenditure for the year on a monthly basis
+   - **Bar Chart**: Comparing total income to total expenditure for the year on a monthly basis.
 
 2. **Category Breakdown of Expenses and Income**:  
    - **Donut/Pie Chart**: Visualizing the proportion of funds spent on Project Activity, Administration,          and Salaries.
