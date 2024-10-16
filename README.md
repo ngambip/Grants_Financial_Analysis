@@ -25,7 +25,7 @@ This project focuses on analyzing the grant funds of a nonprofit organization to
 
 ## Introduction
 
-This project aims to analyze the financial records of grant funds to assess their utilization and ensure transparency. By analyzing income sources and classifying expenses into categories (Project Activity, Administration, Salaries), we will highlight the major areas of spending, helping to inform future budgeting decisions.We expect the Dasboard for answer the following Questions.
+This project aims to analyze the financial records of grant funds to assess their utilization and ensure transparency. By analyzing income sources and classifying expenses into categories (Project Activity, Administration, Salaries), we will highlight the major areas of spending, helping to inform future budgeting decisions.We expect the Dasboard to answer the following Questions.
 
 ## Key Questions Addressed by the Dashboard
 
@@ -71,8 +71,9 @@ Data will be exported from **Sage** accounting software in CSV format, covering:
 Before diving into cleaning, we’ll perform an exploratory data analysis to understand the data’s structure and uncover any immediate insights:
 
 1. **Initial Data Review**:  
-   - Check for missing or outlier values.  
+   - Checked for missing or outlier values.  
    - Verify column types (dates, numeric values, categories).
+   - Checked for duplications
 
 2. **Descriptive Statistics**:  
    - Summarize total income and total expenses.  
