@@ -132,8 +132,7 @@ In Power BI, we’ll perform the following steps:
    - Measure the percentage of funds contributed by each category (Project Activity, Administration, Salaries).
   
 3. **DAX Calculations**:
-   
-``sql
+ ```sql
 
 - Total Amount = 
     SUM('Updated Fact Table'[Amount])
@@ -169,29 +168,6 @@ In Power BI, we’ll perform the following steps:
     RETURN
         DIVIDE([Total Amount],  _allvalue)
 
-- Total Amount Area Sparkline = 
-// line and area colour - use %23 instead of # for Firefox compatibility (Measure Derived from Eldersveld Modified by Kolosko)
-VAR Defs = "<defs>
-    <linearGradient id='grad' x1='0' y1='25' x2='0' y2='50' gradientUnits='userSpaceOnUse'>
-        <stop stop-color='navy' offset='0' />
-        <stop stop-color='transparent' offset='1' />
-    </linearGradient>
-</defs>"
-// "Date" field used in this example along the X axis
-VAR XMinDate = MIN('Calendar'[Monthnum])
-VAR XMaxDate = MAX('Calendar'[Monthnum])
-
-// Obtain overall min and overall max measure values when evaluated for each date
-VAR YMinValue = MINX(VALUES('Calendar'[Monthnum]), CALCULATE([Total Amount]))
-VAR YMaxValue = MAXX(VALUES('Calendar'[Monthnum]), CALCULATE([Total Amount]))
-
-// Build table of X & Y coordinates and fit to 50 x 150 viewbox
-VAR SparklineTable = ADDCOLUMNS(
-    SUMMARIZE('Calendar', 'Calendar'[Monthnum]),
-    "X", INT(150 * DIVIDE('Calendar'[Monthnum] - XMinDate, XMaxDate - XMinDate)),
-    "Y", INT(50 * DIVIDE([Total Amount] - YMinValue, YMaxValue - YMinValue)))
-
-// Conc
 
 - Total Amount Formatted = 
     FORMAT([Total Amount], "$#,.0,k")
